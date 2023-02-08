@@ -18,17 +18,17 @@ const GeneralGroups = ({generalGroups}) => {
         {
           generalGroups.map(item=>{
             return(
-              <Link to={item.url} target="_blank" className="bg-gray-300 flex justify-between pl-4 pr-7 items-center w-full space-x-4 h-[70px] rounded-md overflow-hidden hover:scale-105 transition-all duration-500">
+              <Link to={item.url} target="_blank" className="bg-gray-300 flex justify-between px-2 xl:pl-4 sm:px-3 xl:pr-7 items-center w-full space-x-4 h-[80px] xl:h-[70px] rounded-md overflow-hidden hover:scale-105 transition-all duration-500">
               {/* //! Group Thumbnail */}
-                <div className="w-[15%]">
+                <div className="w-[40%] sm:w-[15%]">
                   <img className='rounded-md ' src="softtechitinstitutegroup.png" />
                 </div>
                 {/* //! Group Title */}
                 <div className='flex-1'>
-                  <h2 className="text-xl font-semibold"> {item.title} </h2>
+                  <h2 className="text-xs sm:text-xl font-semibold"> {item.title} </h2>
                 </div>
                 {/* //! View Button */}
-                <button className='text-sky-600 font-bold underline underline-offset-2 text-xl'> View </button>
+                <button className='text-sky-600 font-bold underline underline-offset-2 text-xs sm:text-xl'> View </button>
               </Link>
             )
           })

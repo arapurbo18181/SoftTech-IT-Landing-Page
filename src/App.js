@@ -8,7 +8,7 @@ function App() {
   return (
     <section className="flex flex-col justify-center items-center">
         <Navbar />
-      <div className="w-screen">
+      <div className="w-screen xl:w-[1440px]">
         <Websites />
         <Pages />
         <Groups />

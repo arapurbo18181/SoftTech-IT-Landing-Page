@@ -67,6 +67,7 @@ const Navbar = () => {
       initial="hidden"
       animate="visible"
     >
+    {/* //! main logo */}
         <div>
           <img src="logo.png" className="" alt="SoftTech-IT Logo" />
         </div>
@@ -83,6 +84,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        {/* //! Menubar button for mobile */}
         <div className="text-3xl block xl:hidden">
           <FaBars onClick={hangleToggle} />
         </div>
@@ -99,6 +101,7 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          {/* //! Close button for phone menubar */}
           <div className="absolute top-2 right-4 text-2xl">
             <GrClose onClick={hangleToggle} />
           </div>

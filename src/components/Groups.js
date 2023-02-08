@@ -60,6 +60,7 @@ const otherGroups = [
 const Groups = () => {
   return (
     <section className="my-10 px-10" id="groups">
+    {/* //! Title */}
       <div>
         <h1 className="text-[2rem] font-extrabold text-sky-500">
           Facebook{" "}
