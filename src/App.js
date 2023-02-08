@@ -6,12 +6,14 @@ import Websites from "./components/Websites";
 
 function App() {
   return (
-    <div className="">
-      <Navbar/>
-      <Websites/>
-      <Pages/>
-      <Groups/>
-    </div>
+    <section className="flex flex-col justify-center items-center">
+        <Navbar />
+      <div className="w-screen">
+        <Websites />
+        <Pages />
+        <Groups />
+      </div>
+    </section>
   );
 }
 

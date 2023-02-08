@@ -1,43 +1,110 @@
-import React from 'react'
-import {HashLink as  Link } from 'react-router-hash-link'
+import React, { useEffect, useState } from "react";
+import { HashLink as Link } from "react-router-hash-link";
+import { motion, spring } from "framer-motion";
+import { FaBars } from "react-icons/fa";
+import { GrClose } from "react-icons/gr";
+
+const navVariants = {
+  hidden: {
+    opacity: 0,
+    y: -100,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 120,
+      delay: 0.5,
+      duration: 1,
+    },
+  },
+};
 
 const nav_menu = [
-    {
-        name: "Home",
-        link: ""
-    },
-    {
-        name: "Websites",
-        link: "websites"
-    },
-    {
-        name: "Facebook Pages",
-        link: "pages"
-    },
-    {
-        name: "Facebook Groups",
-        link: "groups"
-    }
-]
+  {
+    name: "Home",
+    link: "",
+  },
+  {
+    name: "Websites",
+    link: "websites",
+  },
+  {
+    name: "FB Pages",
+    link: "pages",
+  },
+  {
+    name: "General Groups",
+    link: "general groups",
+  },
+  {
+    name: "LMS Groups",
+    link: "skills groups",
+  },
+  {
+    name: "Offline Groups",
+    link: "wordpress offline groups",
+  },
+  {
+    name: "Other Groups",
+    link: "other groups",
+  },
+];
 
 const Navbar = () => {
-  return (
-    <section className='flex justify-between items-center py-6 px-10 sticky top-0 right-0 left-0 bg-white shadow-md z-10'>
-        <div>
-            <img src='logo.png' alt='SoftTech-IT Logo' />
-        </div>
-        <ul className="flex justify-between space-x-12">
-        {nav_menu.map((item) => (
-            <li
-                key={item.name}
-                className="text-xl font-semibold text-gray-700 transition-all hover:-translate-y-1 hover:text-sky-500 hover:underline hover:underline-offset-[10px] cursor-pointer"
-            >
-                <Link to={`#${item.link}`} smooth duration={500} >{item.name}</Link>
-            </li>
-        ))}
-    </ul>
-    </section>
-  )
-}
 
-export default Navbar
+  const [Toggle, setToggle] = useState(false);
+
+  const hangleToggle = () =>{
+    setToggle(!Toggle);
+  }
+
+  return (
+    <motion.section
+      className="flex justify-between items-center py-2 px-10 sticky top-0 right-0 left-0 bg-white shadow-md z-10 w-full"
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+    >
+        <div>
+          <img src="logo.png" className="" alt="SoftTech-IT Logo" />
+        </div>
+        {/* //! MenuBar for PC */}
+        <ul className="justify-between space-x-8 hidden xl:flex">
+          {nav_menu.map((item) => (
+            <li
+              key={item.name}
+              className="text-sm 2xl:text-base font-semibold transition-all hover:text-sky-500 cursor-pointer py-2 px-4 shadow-md bg-sky-500 text-white rounded-md hover:bg-white border-2 hover:border-2 border-sky-500"
+            >
+              <Link to={`#${item.link}`} smooth duration={500}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div className="text-3xl block xl:hidden">
+          <FaBars onClick={hangleToggle} />
+        </div>
+          {/* //! menubar for phone */}
+        <ul className={`flex flex-col justify-start pt-[20%] items-center w-screen h-screen bg-white space-y-2 my-3 z-20 absolute top-0 right-0 left-0  transition-all duration-500 ${Toggle ? "-translate-y-[0]" : "-translate-y-[150%]" }`}>
+          {nav_menu.map((item) => (
+            <li
+              key={item.name}
+              onClick={hangleToggle}
+              className="text-sm 2xl:text-base font-semibold transition-all hover:text-sky-500 cursor-pointer py-2 px-4 shadow-md bg-sky-500 text-white rounded-md hover:bg-white border-2 hover:border-2 border-sky-500 w-1/2"
+            >
+              <Link to={`#${item.link}`} smooth duration={500}>
+                {item.name}
+              </Link>
+            </li>
+          ))}
+          <div className="absolute top-2 right-4 text-2xl">
+            <GrClose onClick={hangleToggle} />
+          </div>
+        </ul>
+    </motion.section>
+  );
+};
+
+export default Navbar;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import GeneralGroups from "./GeneralGroups";
 import OtherGroups from "./OtherGroups";
@@ -68,7 +68,8 @@ const Groups = () => {
           </span>
         </h1>
       </div>
-      <div className="px-5 flex flex-col justify-start items-start space-y-16">
+      <div className="px-5 flex flex-col justify-start items-start space-y-16"
+      >
 
         {/* //! General Groups */}
         <GeneralGroups generalGroups={generalGroups} />

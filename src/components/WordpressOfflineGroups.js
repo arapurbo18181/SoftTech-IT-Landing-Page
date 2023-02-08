@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom'
 
 const WordpressOfflineGroups = ({wordpressOfflineGroups}) => {
   return (
-    <div>
+    <div id='wordpress offline groups'>
     {/* //! Title */}
       <div className="mt-10 mb-5">
         <h1 className="text-[1.5rem] text-center font-extrabold text-sky-500">
-          Wordpress Offline{" "}
+          Offline Facebook{" "}
           <span className="underline underline-offset-[10px] text-[#f1971a]">
             Groups
           </span>
         </h1>
       </div>
       {/* //! Groups */}
-      <div className="grid grid-cols-2 w-full gap-4">
+      <div className="grid grid-cols-1 xl:grid-cols-2 w-full gap-10">
         {
             wordpressOfflineGroups.map(item=>{
             return(
-              <Link to={item.url} target="_blank" className="bg-gray-300 flex justify-between pl-4 pr-7 items-center w-full space-x-4 h-[70px] rounded-md overflow-hidden">
+              <Link to={item.url} target="_blank" className="bg-gray-300 flex justify-between pl-4 pr-7 items-center w-full space-x-4 h-[70px] rounded-md overflow-hidden hover:scale-105 transition-all duration-500">
               {/* //! Group Thumbnail */}
                 <div className="w-[15%]">
                   <img className='rounded-md ' src="softtechitinstitutegroup.png" />
