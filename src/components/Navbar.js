@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import { motion, spring } from "framer-motion";
+import { motion} from "framer-motion";
 import { FaBars } from "react-icons/fa";
 import { GrClose } from "react-icons/gr";
 
@@ -89,7 +89,7 @@ const Navbar = () => {
           <FaBars onClick={hangleToggle} />
         </div>
           {/* //! menubar for phone */}
-        <ul className={`flex flex-col justify-start pt-[20%] items-center w-screen h-screen bg-white space-y-2 my-3 z-20 absolute top-0 right-0 left-0  transition-all duration-500 ${Toggle ? "-translate-y-[0]" : "-translate-y-[150%]" }`}>
+        <ul className={`flex flex-col justify-start pt-[20%] items-center w-[100%] h-screen bg-white space-y-2 z-20 absolute top-0 right-0 left-0 transition-all duration-500 ${Toggle ? "-translate-y-[0]" : "-translate-y-[100%]" }`}>
           {nav_menu.map((item) => (
             <li
               key={item.name}

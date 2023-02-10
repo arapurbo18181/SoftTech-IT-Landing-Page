@@ -21,7 +21,7 @@ const WordpressOfflineGroups = ({wordpressOfflineGroups}) => {
               <Link to={item.url} target="_blank" className="bg-gray-300 flex justify-between px-2 xl:pl-4 sm:px-3 xl:pr-7 items-center w-full space-x-4 h-[80px] xl:h-[70px] rounded-md overflow-hidden hover:scale-105 transition-all duration-500">
               {/* //! Group Thumbnail */}
                 <div className="w-[40%] sm:w-[15%]">
-                  <img className='rounded-md ' src="softtechitinstitutegroup.png" />
+                  <img className='rounded-md ' src={item.img} alt="" />
                 </div>
                 {/* //! Group Title */}
                 <div className='flex-1'>

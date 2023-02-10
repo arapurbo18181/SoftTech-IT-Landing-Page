@@ -1,44 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-
-const pages = [
-    {
-        url: "https://www.facebook.com/softtechitinstitute",
-        title: "SoftTech-IT Institute"
-    },
-    {
-        url: "https://www.facebook.com/softtechitofficial",
-        title: "SoftTech-IT Limited"
-    },
-    {
-        url: "https://www.facebook.com/softtechitsupport",
-        title: "Softtechit Institute Wordpress / WebSupport"
-    },
-    {
-        url: "https://www.facebook.com/profile.php?id=100083388510319",
-        title: "SoftTech-IT"
-    },
-    {
-        url: "https://www.facebook.com/softtechitinstitutegraphic",
-        title: "SoftTech-IT Institute - Graphic Design"
-    },
-    {
-        url: "facebook.com/softtechitskills",
-        title: "SoftTech IT Skills"
-    },
-    {
-        url: "https://www.facebook.com/softtechitinstitutecareers",
-        title: "SoftTech-IT Institute Careers"
-    },
-    {
-        url: "https://www.facebook.com/softtechitcareer",
-        title: "SoftTech-IT Career"
-    },
-    {
-        url: "https://www.facebook.com/getthemeplugin",
-        title: "GetThemePlugin .com"
-    },
-]
+import { pages } from "../utils/AllFbPages";
 
 const Pages = () => {
 
@@ -64,7 +26,7 @@ const Pages = () => {
             >
             {/* //! Page Image */}
               <div className="overflow-hidden">
-                <img className="w-full scale-[1.05] transition-all duration-500 object-contain rounded-sm" src="softtechitinstitute.png" />
+                <img className="w-full scale-[1.05] transition-all duration-500 object-contain rounded-sm" src={item.img} alt="" />
               </div>
               <div className="flex justify-between items-center my-2 mx-2">
               {/* //! Page Title */}

@@ -1,36 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const websites = [
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-  {
-    url: "https://softtechitskills.com/",
-    title: "SoftTech-IT Skills",
-  },
-];
+import { websites } from "../utils/AllWebsites";
 
 const Websites = () => {
   return (
@@ -60,7 +30,8 @@ const Websites = () => {
               <div className="overflow-hidden rounded-t-md">
                 <img
                   className="w-full scale-[1.05] transition-all duration-500 object-contain"
-                  src="skills.png"
+                  src={item.img}
+                  alt=""
                 />
               </div>
               <div className="flex justify-between items-center my-2 mx-2">
